@@ -45,6 +45,11 @@
                 <class>Conshiy_Slave_Helper</class>
             </conshiyslave>
         </helpers>
+        <blocks>
+			<conshiyslave>
+				<class>Conshiy_Slave_Block</class>
+			</conshiyslave>
+		</blocks>
         <resources>
             <conshiyslave_setup>
                 <setup>
@@ -54,4 +59,38 @@
             </conshiyslave_setup>
         </resources>
     </global>
+    <admin>
+        <routers>
+        	<conshiyslave>
+				<use>admin</use>
+				<args>
+					<module>Conshiy_Slave</module>
+					<frontName>conshiy</frontName>
+				</args>
+			</conshiyslave>
+        </routers>
+    </admin>
+    <adminhtml>
+		<menu>
+			<conshiy_menu>
+				<title>Conshiy</title>
+				<sort_order>100</sort_order>
+				<children>
+					<slave_setup_menu module="conshiyslave">
+						<title>Slave Configuration</title>
+						<sort_order>1</sort_order>
+						<action>adminhtml/system_config/edit/section/slave_config</action>
+					</slave_setup_menu>
+				</children>
+			</conshiy_menu>
+		</menu>
+    </adminhtml>
+    <default>
+    	<slave_config>
+    		<master>
+    			<enabled>0</enabled>
+    			<wsdl>http://master.website.tld/api/v2_soap/?wsdl</wsdl>
+    		</master>
+    	</slave_config>
+    </default>
 </config>

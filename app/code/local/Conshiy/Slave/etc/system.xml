@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category    Conshiy
+ * @package     Conshiy_Master
+ * @copyright   Copyright (c) 2014 a356 Development (http://www.a356dev.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <tabs>
+        <conshiy translate="label" module="conshiyslave">
+            <label>Conshiy</label>
+            <sort_order>99999</sort_order>
+        </conshiy>
+    </tabs>
+    <sections>
+        <slave_config translate="label" module="conshiyslave">
+            <label>Slave Configuration</label>
+            <tab>conshiy</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>99999</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+            	<master>
+                    <label>Master Connection</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                    	<enabled translate="label">
+                        	<label>Enable </label>
+                            <comment>Enable connection with Master website</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </enabled>
+                        <wsdl>
+							<label>Master website SOAP V2 Url</label>
+							<comment></comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</wsdl>
+						<username>
+							<label>API username</label>
+							<comment>API Username on Master website.</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</username>
+						<password>
+							<label>API password</label>
+							<comment>API password on Master website.</comment>
+							<frontend_type>password</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</password>
+						<validate translate="label">
+                			<label>Validate API Connection</label>
+                			<frontend_type>button</frontend_type>
+                			<frontend_model>conshiyslave/adminhtml_system_config_form_button_validate</frontend_model>
+                			<sort_order>50</sort_order>
+                			<show_in_default>1</show_in_default>
+                			<show_in_website>0</show_in_website>
+                			<show_in_store>0</show_in_store>
+            			</validate>
+                    </fields>
+                 </master>
+            </groups>
+        </slave_config>
+    </sections>
+</config>
